@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
 import {
-  MdDelete,
-  MdAddCircleOutline,
-  MdRemoveCircleOutline,
+  MdAddCircleOutline, MdDelete, MdRemoveCircleOutline
 } from 'react-icons/md';
 import { useCart } from '../../hooks/useCart';
-import { formatPrice } from './../../util/format'
+import { formatPrice } from './../../util/format';
 
-// import { useCart } from '../../hooks/useCart';
-// import { formatPrice } from '../../util/format';
 import { Container, ProductTable, Total } from './styles';
 
 interface Product {
@@ -20,7 +15,7 @@ interface Product {
 }
 
 const Cart = (): JSX.Element => {
-  const { cart, removeProduct, updateProductAmount, addProduct } = useCart();
+  const { cart, removeProduct, updateProductAmount } = useCart();
 
   const cartFormatted = cart.map((product: Product) => ({
     ...product,
